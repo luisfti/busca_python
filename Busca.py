@@ -14,7 +14,6 @@ import matplotlib.pyplot as plt
 
 #====CASO=================================================================================
 
-
 # Função que gera um arquivo com uma lista de números aleatórios
 def aleatorio(entry1,entry2,entry3,entry4,size):
     
@@ -55,40 +54,7 @@ def aleatorio(entry1,entry2,entry3,entry4,size):
     arv.close()
     
 
-#====LEITURA==============================================================================
-
-
-# Função que recupera os dados de um arquivo
-def leitura(entry1,entry2,entry3,entry4,size):
-
-    with open('aleatorio'+str(size)+'.txt',"r") as arv:
-        for line in arv:
-            line = line.replace("\n","").split(" ")
-            for i in line:
-                entry1.append(int(i))
-    arv.close()
-    with open('aleatorio'+str(size*10)+'.txt',"r") as arv:
-        for line in arv:
-            line = line.replace("\n","").split(" ")
-            for i in line:
-                entry2.append(int(i))
-    arv.close()
-    with open('aleatorio'+str(size*100)+'.txt',"r") as arv:
-        for line in arv:
-            line = line.replace("\n","").split(" ")
-            for i in line:
-                entry3.append(int(i))
-    arv.close()
-    with open('aleatorio'+str(size*1000)+'.txt',"r") as arv:
-        for line in arv:
-            line = line.replace("\n","").split(" ")
-            for i in line:
-                entry4.append(int(i))    
-    arv.close()
-
-
 #====BUSCA==============================================================================
-
 
 # Sequencial
 def buscaSequencial(entry, key):
@@ -96,7 +62,6 @@ def buscaSequencial(entry, key):
         if entry[i] == key:
             return i
     return -1
-
 
 # Binária
 def buscaBinaria(entry, key):
@@ -131,24 +96,13 @@ def main():
     time3 =[]
     
     # Cria o arquivo com as entradas
-    #healeatorio(entry1,entry2,entry3,entry4,size)
-    
-    # Força o ultimo valor de cada lista para uma chave conhecida
-    #entry1[len(entry1)-1]=12
-    #entry2[len(entry2)-1]=12
-    #entry3[len(entry3)-1]=12
-    #entry4[len(entry4)-1]=12
-    
-    
-    # Le o arquivo e passa para a lista
-    leitura(entry1,entry2,entry3,entry4,size)
+    aleatorio(entry1,entry2,entry3,entry4,size)
     
     # Adiciona a chave para busca
     key = int(input("Digite a chave para busca:"))
-    print('Chave:',key)
     print('\n')
     
-    
+    # Faz um loop nos algoritmos de busca para cada entrada
     for i in range(4):
         
         entry =[]
@@ -203,8 +157,8 @@ def main():
             print('Indice: não encontrado')
         print('Tempo: %.7fs' % (time1[i]))
         print("\n")
+
         
-    
         # Busca Binária ordenada =====================================
         print("BINÁRIA:")
         start = timeit.default_timer() # Contagem de tempo
@@ -219,9 +173,9 @@ def main():
             print('Indice: não encontrado')
         print('Tempo: %.7fs' % (time1[i]))
         print("\n")
+        
     
     
-
 if __name__ == "__main__":
     main()
     
