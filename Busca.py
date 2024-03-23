@@ -8,9 +8,7 @@ Created on Tue Mar  5 13:11:31 2024
 
 import random
 import timeit
-import heapq
-import matplotlib.pyplot as plt
-
+import time
 
 #====CASO=================================================================================
 
@@ -27,47 +25,43 @@ def aleatorio(entry1,entry2,entry3,entry4,size):
     
     for i in range(size*1000):
         entry4.append(random.randrange(1, 1001))
-
-    with open('aleatorio'+str(size)+'.txt', 'w') as arv:
-        for i in entry1:    
-            line = str(i) + "\n"
-            arv.write(line)
-    arv.close()
+        
+    with open('./listas/aleatorio'+str(size)+'.txt', 'w') as a, open('./listas/aleatorio'+str(size*10)+'.txt', 'w') as b, open('./listas/aleatorio'+str(size*100)+'.txt', 'w') as c, open('./listas/aleatorio'+str(size*1000)+'.txt', 'w') as d:
+        for x in entry1:
+            line = str(x) + "\n"
+            a.write(line)
+            
+        for x in entry2:
+            line = str(x) + "\n"
+            b.write(line)
+            
+        for x in entry3:
+            line = str(x) + "\n"
+            c.write(line)
+            
+        for x in entry1:
+            line = str(x) + "\n"
+            d.write(line)
+    a.close(),b.close(),c.close(),d.close()
     
-    with open('aleatorio'+str(size*10)+'.txt', 'w') as arv:
-        for i in entry2:    
-            line = str(i) + "\n"
-            arv.write(line)
-    arv.close()
-    
-    with open('aleatorio'+str(size*100)+'.txt', 'w') as arv:
-        for i in entry3:    
-            line = str(i) + "\n"
-            arv.write(line)
-    arv.close()
-    
-    with open('aleatorio'+str(size*1000)+'.txt', 'w') as arv:
-        for i in entry4:    
-            line = str(i) + "\n"
-            arv.write(line)
-    arv.close()
     
 #====LEITURA============================================================================
 
+# Função que le arquivos de listas  numéricas
 def leitura(entry1,entry2,entry3,entry4,size):
-    with open('aleatorio'+str(size)+'.txt') as a, open('aleatorio'+str(size*10)+'.txt') as b, open('aleatorio'+str(size*100)+'.txt') as c, open('aleatorio'+str(size*1000)+'.txt') as d:
-        conteudo_a = a.readlines()
-        conteudo_b = b.readlines()
-        conteudo_c = c.readlines()
-        conteudo_d = d.readlines()
-        for conteudo in conteudo_a:
-            entry1.append(int(conteudo))
-        for conteudo in conteudo_b:
-            entry2.append(int(conteudo))
-        for conteudo in conteudo_c:
-            entry3.append(int(conteudo))
-        for conteudo in conteudo_d:
-            entry4.append(int(conteudo))
+    with open('./listas/aleatorio'+str(size)+'.txt') as a, open('./listas/aleatorio'+str(size*10)+'.txt') as b, open('./listas/aleatorio'+str(size*100)+'.txt') as c, open('./listas/aleatorio'+str(size*1000)+'.txt') as d:
+        content_a = a.readlines()
+        content_b = b.readlines()
+        content_c = c.readlines()
+        content_d = d.readlines()
+        for x in content_a:
+            entry1.append(int(x))
+        for x in content_b:
+            entry2.append(int(x))
+        for x in content_c:
+            entry3.append(int(x))
+        for x in content_d:
+            entry4.append(int(x))
     a.close(),b.close(),c.close(),d.close()
     
     
@@ -78,6 +72,7 @@ def buscaSequencial(entry, key):
     for i in range(len(entry)):
         if entry[i] == key:
             return i
+        time.sleep(0.0001)
     return -1
 
 # Sequencial Ordenada
@@ -87,6 +82,7 @@ def buscaSequencialOrdenada(entry, key):
             return -1
         elif entry[i] == key:
             return i
+        time.sleep(0.0001)
 
 # Binária
 def buscaBinaria(entry, key):
@@ -96,10 +92,11 @@ def buscaBinaria(entry, key):
         middle = (start + end)//2
         if entry[middle] == key:
             return middle
-        elif entry[middle] > key:
-            end = middle - 1
-        else:
+        elif entry[middle] < key:
             start = middle + 1
+        elif entry[middle] > key:
+                end = middle - 1
+        time.sleep(0.0001)
     return -1
 
 
@@ -163,12 +160,12 @@ def main():
         else:
             print('Valor:', key)
             print('Indice: não encontrado')
-        print('Tempo: %.7fs' % (time1[i]))
+        print('Tempo: %.3fs' % (time1[i]))
         print("\n")
         
         
         # Ordena os itens da lista
-        heapq.heapify(entry)
+        entry = sorted(entry)
         
         
         # Busca Sequencial ordenada ==================================
@@ -183,7 +180,7 @@ def main():
         else:
             print('Valor:', key)
             print('Indice: não encontrado')
-        print('Tempo: %.7fs' % (time1[i]))
+        print('Tempo: %.3fs' % (time1[i]))
         print("\n")
 
         
@@ -199,9 +196,10 @@ def main():
         else:
             print('Valor:', key)
             print('Indice: não encontrado')
-        print('Tempo: %.7fs' % (time1[i]))
+        print('Tempo: %.3fs' % (time1[i]))
         print("\n")
         
+    
     
     
 if __name__ == "__main__":

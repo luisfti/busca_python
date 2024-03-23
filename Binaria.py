@@ -6,8 +6,8 @@ def buscaBinaria(entry, key):
         middle = (start + end)//2
         if entry[middle] == key:
             return middle
-        elif entry[middle] > key:
-            end = middle - 1
-        else:
+        elif entry[middle] < key:
             start = middle + 1
+        elif entry[middle] > key:
+                end = middle - 1
     return -1
