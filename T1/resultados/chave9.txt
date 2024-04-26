@@ -1,0 +1,86 @@
+Digite o tamanho da entrada:10000
+Digite a chave para busca:9
+
+
+================10000=================
+
+
+SEQUENCIAL:
+Valor: 9
+Indice: 177
+Tempo: 0.091s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 9
+Indice: 87
+Tempo: 0.091s
+
+
+BINÁRIA:
+Valor: 9
+Indice: 96
+Tempo: 0.091s
+
+
+================100000=================
+
+
+SEQUENCIAL:
+Valor: 9
+Indice: 2271
+Tempo: 1.173s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 9
+Indice: 792
+Tempo: 1.173s
+
+
+BINÁRIA:
+Valor: 9
+Indice: 828
+Tempo: 1.173s
+
+
+================1000000=================
+
+
+SEQUENCIAL:
+Valor: 9
+Indice: 46
+Tempo: 0.024s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 9
+Indice: 8050
+Tempo: 0.024s
+
+
+BINÁRIA:
+Valor: 9
+Indice: 8787
+Tempo: 0.024s
+
+
+================10000000=================
+
+
+SEQUENCIAL:
+Valor: 9
+Indice: 177
+Tempo: 0.092s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 9
+Indice: 87
+Tempo: 0.092s
+
+
+BINÁRIA:
+Valor: 9
+Indice: 96
+Tempo: 0.092s

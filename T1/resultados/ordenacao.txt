@@ -1,0 +1,42 @@
+================10000=================
+
+
+SQRT - Insertion Sort:
+Tempo de Ordenação: 0.096s
+
+
+SQRT - Heap Sort:
+Tempo de Ordenação: 0.095s
+
+
+================100000=================
+
+
+SQRT - Insertion Sort:
+Tempo de Ordenação: 3.815s
+
+
+SQRT - Heap Sort:
+Tempo de Ordenação: 3.520s
+
+
+================1000000=================
+
+
+SQRT - Insertion Sort:
+Tempo de Ordenação: 219.597s
+
+
+SQRT - Heap Sort:
+Tempo de Ordenação: 205.636s
+
+
+================10000000=================
+
+
+SQRT - Insertion Sort:
+Tempo de Ordenação: 0.098s
+
+
+SQRT - Heap Sort:
+Tempo de Ordenação: 0.094s

@@ -1,0 +1,85 @@
+Digite a chave para busca:34
+
+
+================10000=================
+
+
+SEQUENCIAL:
+Valor: 34
+Indice: 301
+Tempo: 0.157s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 34
+Indice: 333
+Tempo: 0.157s
+
+
+BINÁRIA:
+Valor: 34
+Indice: 340
+Tempo: 0.157s
+
+
+================100000=================
+
+
+SEQUENCIAL:
+Valor: 34
+Indice: 2290
+Tempo: 1.188s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 34
+Indice: 3218
+Tempo: 1.188s
+
+
+BINÁRIA:
+Valor: 34
+Indice: 3221
+Tempo: 1.188s
+
+
+================1000000=================
+
+
+SEQUENCIAL:
+Valor: 34
+Indice: 3401
+Tempo: 1.779s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 34
+Indice: 33049
+Tempo: 1.779s
+
+
+BINÁRIA:
+Valor: 34
+Indice: 33202
+Tempo: 1.779s
+
+
+================10000000=================
+
+
+SEQUENCIAL:
+Valor: 34
+Indice: 301
+Tempo: 0.156s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 34
+Indice: 333
+Tempo: 0.156s
+
+
+BINÁRIA:
+Valor: 34
+Indice: 340
+Tempo: 0.156s
