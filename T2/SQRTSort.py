@@ -50,23 +50,23 @@ def aleatorio(entry1,entry2,entry3,entry4,size):
         entry4.append(x)
     
     # Cria os arquivos
-    # with open('./listas/aleatorio'+str(size)+'.txt', 'w') as a, open('./listas/aleatorio'+str(size*10)+'.txt', 'w') as b, open('./listas/aleatorio'+str(size*100)+'.txt', 'w') as c, open('./listas/aleatorio'+str(size*1000)+'.txt', 'w') as d:
-    #     for x in entry1:
-    #         line = str(x) + "\n"
-    #         a.write(line)
+    with open('./listas/aleatorio'+str(size)+'.txt', 'w') as a, open('./listas/aleatorio'+str(size*10)+'.txt', 'w') as b, open('./listas/aleatorio'+str(size*100)+'.txt', 'w') as c, open('./listas/aleatorio'+str(size*1000)+'.txt', 'w') as d:
+        for x in entry1:
+            line = str(x) + "\n"
+            a.write(line)
             
-    #     for x in entry2:
-    #         line = str(x) + "\n"
-    #         b.write(line)
+        for x in entry2:
+            line = str(x) + "\n"
+            b.write(line)
             
-    #     for x in entry3:
-    #         line = str(x) + "\n"
-    #         c.write(line)
+        for x in entry3:
+            line = str(x) + "\n"
+            c.write(line)
             
-    #     for x in entry1:
-    #         line = str(x) + "\n"
-    #         d.write(line)
-    # a.close(),b.close(),c.close(),d.close()
+        for x in entry1:
+            line = str(x) + "\n"
+            d.write(line)
+    a.close(),b.close(),c.close(),d.close()
     
     
 #====LEITURA============================================================================
