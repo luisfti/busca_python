@@ -1,18 +1,30 @@
 # -*- coding: utf-8 -*-
 """
+Created on Tue Apr 16 14:00:16 2024
+
+@author: Luis1
+"""
+
+
+# -*- coding: utf-8 -*-
+"""
 Created on Tue Mar  5 13:11:31 2024
 
 @author: Luis1
 """
 #====IMPORTS==============================================================================
 
+import math
 import random
 import time
+import heapq
 
 #====CASO=================================================================================
 
 # Função que gera um arquivo com uma lista de números aleatórios
 def aleatorio(entry1,entry2,entry3,entry4,size):
+    
+    # Cria as listas
     for i in range(size):
         x = random.randrange(1, 1001)
         if(x == 1000):
@@ -36,7 +48,8 @@ def aleatorio(entry1,entry2,entry3,entry4,size):
         if(x == 1000):
             x = 1
         entry4.append(x)
-        
+    
+    # Cria os arquivos
     with open('./listas/aleatorio'+str(size)+'.txt', 'w') as a, open('./listas/aleatorio'+str(size*10)+'.txt', 'w') as b, open('./listas/aleatorio'+str(size*100)+'.txt', 'w') as c, open('./listas/aleatorio'+str(size*1000)+'.txt', 'w') as d:
         for x in entry1:
             line = str(x) + "\n"
@@ -58,7 +71,7 @@ def aleatorio(entry1,entry2,entry3,entry4,size):
     
 #====LEITURA============================================================================
 
-# Função que le arquivos de listas  numéricas
+# Função que le arquivos contendo listas  numéricas
 def leitura(entry1,entry2,entry3,entry4,size):
     with open('./listas/aleatorio'+str(size)+'.txt') as a, open('./listas/aleatorio'+str(size*10)+'.txt') as b, open('./listas/aleatorio'+str(size*100)+'.txt') as c, open('./listas/aleatorio'+str(size*1000)+'.txt') as d:
         content_a = a.readlines()
@@ -76,45 +89,102 @@ def leitura(entry1,entry2,entry3,entry4,size):
     a.close(),b.close(),c.close(),d.close()
     
     
-#====BUSCA==============================================================================
+#====MÉTODOS============================================================================
 
-# Sequencial
-def busca_sequencial(entry, key):
-    for i in range(len(entry)):
-        if entry[i] == key:
-            return i    
-    return -1
+# Insertion Sort
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+        
 
-# Sequencial Ordenada
-def busca_sequencial_ordenada(entry, key):
-    for i in range(len(entry)):
-        if entry[i] == key:
-            return i
-        elif entry[i] > key:
-            return -1
-    return -1
+# Heap Sort
+def heapify(arr, n, i):
+    largest = i  
+    l = 2 * i + 1    
+    r = 2 * i + 2    
+
+    if l < n and arr[l] > arr[largest]:
+        largest = l
+
+    if r < n and arr[r] > arr[largest]:
+        largest = r
+
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]  
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    for i in range(n-1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]  
+        heapify(arr, i, 0)
+
+
+
+#====ORDENAÇÃO==========================================================================
+
+# Ordenação de raiz usando Insertion Sort
+def sqrt_insertion_sort(arr):
+    n = len(arr)
+    section_size = int(math.sqrt(n))
+
+    # Dividindo a lista em seções
+    sections = [arr[i:i+section_size] for i in range(0, n, section_size)]
+    
+    # Ordenando cada seção usando insertion sort
+    for section in sections:
+        insertion_sort(section)
+    
+    # Mesclando as seções ordenadas
+    sorted_arr = []
+    while sections:
+        # Encontra a maior cabeça de seção
+        max_section = max(sections, key=lambda x: x[-1])
+        sorted_arr.insert(0,max_section.pop())
+        # Remove a seção vazia
+        if not max_section:
+            sections.remove(max_section)
+
+    return sorted_arr
+
+
+# Ordenação de raiz usando Heap Sort
+def sqrt_heap_sort(arr):
+    n = len(arr)
+    section_size = int(math.sqrt(n))
+   
+
+    # Dividindo a lista em seções
+    sections = [arr[i:i+section_size] for i in range(0, n, section_size)]
+    
+    # Ordenando cada seção usando heap sort
+    for section in sections:
+        heap_sort(section)
+    
+    # Mesclando as seções ordenadas
+    sorted_arr = []
+    while sections:
+        # Encontra a maior cabeça de seção
+        max_section = max(sections, key=lambda x: x[-1])
         
-        
-            
-# Binária
-def busca_binaria(entry, key):
-    start = 0
-    end = len(entry)-1
-    while start <= end:
-        middle = (start + end)//2
-        if entry[middle] == key:
-            return middle
-        elif entry[middle] < key:
-            start = middle + 1
-        elif entry[middle] > key:
-                end = middle - 1
-        
-    return -1
+        sorted_arr.insert(0,max_section.pop())
+        # Remove a seção vazia
+        if not max_section:
+            sections.remove(max_section)
+
+    return sorted_arr
+
 
 #====PRINT==============================================================================
-
-# def plot_Values(index, time, key):
-   
 
 
 #====MAIN===============================================================================
@@ -133,17 +203,13 @@ def main():
     # Listas de tempo de execução
     time1 =[]
     time2 =[]
-    time3 =[]
     
     # Cria o arquivo com as entradas
-    #aleatorio(entry1,entry2,entry3,entry4,size)
+    aleatorio(entry1,entry2,entry3,entry4,size)
 
     # Le os arquivos com as entradas e poe nas listas
-    leitura(entry1,entry2,entry3,entry4,size)
+    # leitura(entry1,entry2,entry3,entry4,size)
     
-    # Adiciona a chave para busca
-    key = int(input("Digite a chave para busca:"))
-    print('\n')
     
     # Cria um dicionário para armazenar as entradas
     entries = [entry1, entry2, entry3, entry4]
@@ -151,67 +217,36 @@ def main():
     
     # Faz um loop nos algoritmos de busca para cada entrada
     for i, entry in enumerate(entries):
-
+        
+        # print(entry)
+        
         print("================"+str(size)+tams[i]+"=================")
         
         print("\n")
-        # Busca Sequencial não ordenada ===============================
-        print("SEQUENCIAL:")
+        # Insertion Sort ===============================
+        print("SQRT - Insertion Sort:")
         start = time.time() # Contagem de tempo
-        index = busca_sequencial(entry, key)
+        sorted_arr1 = sqrt_insertion_sort(entry)
         end = time.time()
-        time1.append(round(end - start, 4))
-        if(index != -1):
-            print('Valor:', entry[index])
-            print('Indice:', index)
-        else:
-            print('Valor:', key)
-            print('Indice: não encontrado')
-        print('Tempo: %.7fs' % (time1[i]))
+        time1.append(end - start)
+        
+        print('Tempo de Ordenação: %.3fs' % (time1[i]))
         print("\n")
         
         
-        # Ordena os itens da lista
-        entry = sorted(entry)
         
-        
-        # Busca Sequencial ordenada ==================================
-        print("SEQUENCIAL ORDENADA:")
+        # Heap Sort ==================================
+        print("SQRT - Heap Sort:")
         start = time.time() # Contagem de tempo
-        index = busca_sequencial_ordenada(entry, key)
+        sorted_arr2 = sqrt_heap_sort(entry)
         end = time.time()
-        time2.append(round(end - start, 4))
-        if(index != -1):
-            print('Valor:', entry[index])
-            print('Indice:', index)
-        else:
-            print('Valor:', key)
-            print('Indice: não encontrado')
-        print('Tempo: %.7fs' % (time2[i]))
+        time2.append(end - start)
+    
+        print('Tempo de Ordenação: %.3fs' % (time2[i]))
         print("\n")
 
         
-        # Busca Binária ordenada =====================================
-        print("BINÁRIA:")
-        start = time.time() # Contagem de tempo
-        index = busca_binaria(entry, key)
-        end = time.time()
-        time3.append(round(end - start, 4))
-        if(index != -1):
-            print('Valor:', entry[index])
-            print('Indice:', index)
-        else:
-            print('Valor:', key)
-            print('Indice: não encontrado')
-        print('Tempo: %.7fs' % (time3[i]))
-        print("\n")
-        
-    print(f"Sequencial(key{key}):" , (time1))
-    print(f"Sequencial Ordenado(key{key}):", time2)
-    print(f"Binaria(key{key}):", time3)
-    
     
 if __name__ == "__main__":
     main()
     
-

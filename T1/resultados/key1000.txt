@@ -1,0 +1,87 @@
+================10000=================
+
+
+SEQUENCIAL:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0010000s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0010000s
+
+
+BINÁRIA:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0000000s
+
+
+================100000=================
+
+
+SEQUENCIAL:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0035000s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0050000s
+
+
+BINÁRIA:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0000000s
+
+
+================1000000=================
+
+
+SEQUENCIAL:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0306000s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0478000s
+
+
+BINÁRIA:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0000000s
+
+
+================10000000=================
+
+
+SEQUENCIAL:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0000000s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0000000s
+
+
+BINÁRIA:
+Valor: 1000
+Indice: não encontrado
+Tempo: 0.0000000s
+
+
+Sequencial(key1000): [0.001, 0.0035, 0.0306, 0.0]
+Sequencial Ordenado(key1000):  [0.001, 0.005, 0.0478, 0.0]
+Binaria(key1000):  [0.0, 0.0, 0.0, 0.0]

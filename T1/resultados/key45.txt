@@ -1,0 +1,87 @@
+================10000=================
+
+
+SEQUENCIAL:
+Valor: 45
+Indice: 1323
+Tempo: 0.0000000s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 45
+Indice: 447
+Tempo: 0.0000000s
+
+
+BINÁRIA:
+Valor: 45
+Indice: 447
+Tempo: 0.0000000s
+
+
+================100000=================
+
+
+SEQUENCIAL:
+Valor: 45
+Indice: 1814
+Tempo: 0.0000000s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 45
+Indice: 4453
+Tempo: 0.0010000s
+
+
+BINÁRIA:
+Valor: 45
+Indice: 4490
+Tempo: 0.0000000s
+
+
+================1000000=================
+
+
+SEQUENCIAL:
+Valor: 45
+Indice: 418
+Tempo: 0.0000000s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 45
+Indice: 45063
+Tempo: 0.0020000s
+
+
+BINÁRIA:
+Valor: 45
+Indice: 45897
+Tempo: 0.0000000s
+
+
+================10000000=================
+
+
+SEQUENCIAL:
+Valor: 45
+Indice: 1323
+Tempo: 0.0000000s
+
+
+SEQUENCIAL ORDENADA:
+Valor: 45
+Indice: 447
+Tempo: 0.0000000s
+
+
+BINÁRIA:
+Valor: 45
+Indice: 447
+Tempo: 0.0000000s
+
+
+Sequencial(key45): [0.0, 0.0, 0.0, 0.0]
+Sequencial Ordenado(key45):  [0.0, 0.001, 0.002, 0.0]
+Binaria(key45):  [0.0, 0.0, 0.0, 0.0]
