@@ -26,28 +26,21 @@ def aleatorio(entry1,entry2,entry3,entry4,size):
     
     # Cria as listas
     for i in range(size):
-        x = random.randrange(1, 1001)
-        if(x == 1000):
-            x = 1
+        x = random.randrange(1, 1000)
         entry1.append(x)
     
     for i in range(size*10):
-        x = random.randrange(1, 1001)
-        if(x == 1000):
-            x = 1
+        x = random.randrange(1, 1000)
         entry2.append(x)
         
     for i in range(size*100):
-        x = random.randrange(1, 1001)
-        if(x == 1000):
-            x = 1
+        x = random.randrange(1, 1000)
         entry3.append(x)
     
     for i in range(size*1000):
-        x = random.randrange(1, 1001)
-        if(x == 1000):
-            x = 1
+        x = random.randrange(1, 1000)
         entry4.append(x)
+        
     
     # Cria os arquivos
     with open('./listas/aleatorio'+str(size)+'.txt', 'w') as a, open('./listas/aleatorio'+str(size*10)+'.txt', 'w') as b, open('./listas/aleatorio'+str(size*100)+'.txt', 'w') as c, open('./listas/aleatorio'+str(size*1000)+'.txt', 'w') as d:
@@ -160,29 +153,36 @@ def sqrt_insertion_sort(arr):
 # Ordenação de raiz usando Heap Sort
 def sqrt_heap_sort(arr):
     n = len(arr)
-    section_size = int(math.sqrt(n))
-   
+    block_size = int(math.sqrt(n))
+    
+    
+    # Dividindo a lista em blocos
+    blocks = [arr[i:i+block_size] for i in range(0, n, block_size)]
+    
+    # Construindo as heaps máximas de cada bloco
+    block_heaps = []
+    for block in blocks:
+        heapq._heapify_max(block)  # Construtor
+        block_heaps.append(block)
+    
 
-    # Dividindo a lista em seções
-    sections = [arr[i:i+section_size] for i in range(0, n, section_size)]
+    # Construção da heap auxiliar 
+    max_heap = []
+    for i in range(len(block_heaps)):
+        if block_heaps[i]:
+            heapq.heappush(max_heap, (-block_heaps[i][0], i))
     
-    # Ordenando cada seção usando heap sort
-    for section in sections:
-        heap_sort(section)
-    
-    # Mesclando as seções ordenadas
+
+    # Ordenando os elementos
     sorted_arr = []
-    while sections:
-        # Encontra a maior cabeça de seção
-        max_section = max(sections, key=lambda x: x[-1])
-        
-        sorted_arr.insert(0,max_section.pop())
-        # Remove a seção vazia
-        if not max_section:
-            sections.remove(max_section)
-
+    while max_heap:
+        max_value, block_index = heapq.heappop(max_heap)
+        sorted_arr.insert(0, -max_value)  # Insere no início da lista para ordem crescente
+        heapq._heappop_max(block_heaps[block_index])  # Remove o maior elemento do bloco
+        if block_heaps[block_index]:  # Se ainda há elementos no bloco
+            heapq.heappush(max_heap, (-block_heaps[block_index][0], block_index))
+       
     return sorted_arr
-
 
 #====PRINT==============================================================================
 
