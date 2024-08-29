@@ -13,30 +13,41 @@ Tempo de Ordenação: 0.003s
 
 
 SQRT - Insertion Sort:
-Tempo de Ordenação: 0.098s
+Tempo de Ordenação: 0.088s
 
 
 SQRT - Heap Sort:
-Tempo de Ordenação: 0.089s
+Tempo de Ordenação: 0.018s
 
 
 ================100000=================
 
 
 SQRT - Insertion Sort:
-Tempo de Ordenação: 3.849s
+Tempo de Ordenação: 3.529s
 
 
 SQRT - Heap Sort:
-Tempo de Ordenação: 3.501s
+Tempo de Ordenação: 1.301s
 
 
 ================1000000=================
 
 
 SQRT - Insertion Sort:
-Tempo de Ordenação: 218.631s
+Tempo de Ordenação: 204.843s
 
 
 SQRT - Heap Sort:
-Tempo de Ordenação: 203.161s
+Tempo de Ordenação: 119.324s
+
+
+================10000000=================
+
+
+SQRT - Insertion Sort:
+Tempo de Ordenação: 16481.107s
+
+
+SQRT - Heap Sort:
+Tempo de Ordenação: 13160.972s

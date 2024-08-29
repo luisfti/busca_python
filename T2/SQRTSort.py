@@ -86,71 +86,65 @@ def leitura(entry1,entry2,entry3,entry4,size):
 
 # Insertion Sort
 def insertion_sort(arr):
-    for i in range(1, len(arr)):
+    n = len(arr)
+    max_val = arr[0]
+    for i in range(1, n):
         key = arr[i]
         j = i - 1
-        while j >= 0 and key < arr[j]:
+
+        # Insere o elemento na posição correta
+        while j >= 0 and arr[j] < key:
             arr[j + 1] = arr[j]
             j -= 1
-        arr[j + 1] = key
         
+        arr[j + 1] = key
 
-# Heap Sort
-def heapify(arr, n, i):
-    largest = i  
-    l = 2 * i + 1    
-    r = 2 * i + 2    
-
-    if l < n and arr[l] > arr[largest]:
-        largest = l
-
-    if r < n and arr[r] > arr[largest]:
-        largest = r
-
-    if largest != i:
-        arr[i], arr[largest] = arr[largest], arr[i]  
-        heapify(arr, n, largest)
-
-def heap_sort(arr):
-    n = len(arr)
-
-    for i in range(n // 2 - 1, -1, -1):
-        heapify(arr, n, i)
-
-    for i in range(n-1, 0, -1):
-        arr[i], arr[0] = arr[0], arr[i]  
-        heapify(arr, i, 0)
-
-
+        # Atualiza o máximo atual
+        if key > max_val:
+            max_val = key
+    
+    
+    return max_val
+        
 
 #====ORDENAÇÃO==========================================================================
 
 # Ordenação de raiz usando Insertion Sort
 def sqrt_insertion_sort(arr):
     n = len(arr)
-    section_size = int(math.sqrt(n))
+    block_size = int(math.sqrt(n))
 
     # Dividindo a lista em seções
-    sections = [arr[i:i+section_size] for i in range(0, n, section_size)]
+    blocks = [arr[i:i+block_size] for i in range(0, n, block_size)]
+   
     
-    # Ordenando cada seção usando insertion sort
-    for section in sections:
-        insertion_sort(section)
-    
-    # Mesclando as seções ordenadas
+    # Encontrando o máximo de cada seção usando insertion sort
+    max_elements = [insertion_sort(section) for block in blocks]
+   
+    # Ordenando os máximos encontrados
     sorted_arr = []
-    while sections:
-        # Encontra a maior cabeça de seção
-        max_section = max(sections, key=lambda x: x[-1])
-        sorted_arr.insert(0,max_section.pop())
-        # Remove a seção vazia
-        if not max_section:
-            sections.remove(max_section)
+    while max_elements:
+        # Encontra o maior valor entre os máximos e adiciona à lista
+        max_val = max(max_elements)
+        sorted_arr.insert(0, max_val)
+        
+        
+        # Remove o maior valor da seção correspondente
+        max_index = max_elements.index(max_val)
+        blocks[max_index].remove(max_val)
+        
+        # Atualiza o máximo daquela seção ou remove se estiver vazia
+        if blocks[max_index]:
+            max_elements[max_index] = insertion_sort(blocks[max_index])
+        else:
+            max_elements.pop(max_index)
+            blocks.pop(max_index)
+       
 
     return sorted_arr
 
 
-# Ordenação de raiz usando Heap Sort
+# Ordenação de raiz usando Heap
 def sqrt_heap_sort(arr):
     n = len(arr)
     block_size = int(math.sqrt(n))
@@ -183,8 +177,6 @@ def sqrt_heap_sort(arr):
             heapq.heappush(max_heap, (-block_heaps[block_index][0], block_index))
        
     return sorted_arr
-
-#====PRINT==============================================================================
 
 
 #====MAIN===============================================================================
