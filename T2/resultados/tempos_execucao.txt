@@ -1,0 +1,13 @@
+1000 | Tempo Insertion Sort: 0.004s
+1000 | Tempo Heap: 0.001s
+10000 | Tempo Insertion Sort: 0.091s
+10000 | Tempo Heap: 0.007s
+100000 | Tempo Insertion Sort: 3.840s
+100000 | Tempo Heap: 0.081s
+1000000 | Tempo Insertion Sort: 220.378s
+1000000 | Tempo Heap: 1.012s
+10000000 | Tempo Insertion Sort: 17360.489s
+10000000 | Tempo Heap: 17.529s
+
+Insertion Sort: [0.004, 0.091, 3.84, 220.378, 17360.489]
+Heap: [0.001, 0.007, 0.081, 1.012, 17.529]

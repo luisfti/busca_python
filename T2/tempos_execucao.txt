@@ -1,0 +1,6 @@
+Tamanho: 1000 | Tempo Insertion Sort: 0.003s
+Tamanho: 1000 | Tempo Heap Sort: 0.001s
+Tamanho: 10000 | Tempo Insertion Sort: 0.090s
+Tamanho: 10000 | Tempo Heap Sort: 0.007s
+Tamanho: 100000 | Tempo Insertion Sort: 3.796s
+Tamanho: 100000 | Tempo Heap Sort: 0.082s
