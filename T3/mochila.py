@@ -9,34 +9,55 @@ class Item:
         self.peso = peso
         self.valor = valor
 
-# Função para ler os dados dos três diretórios de arquivos
+# Função para ler os dados dos arquivos, organizar e processar
 def ler_dados(diretorio):
-    subpastas = ['knaPI_2']
+    # Subpasta onde os arquivos estão localizados
+    subpastas = ['knaPI_1', 'knaPI_2', 'knaPI_3']
     dados = {}
 
+    # Itera sobre as subpastas especificadas
     for subpasta in subpastas:
         caminho_pasta = os.path.join(diretorio, subpasta)
-        arquivos = os.listdir(caminho_pasta)
+        arquivos = os.listdir(caminho_pasta)  # Lista todos os arquivos na subpasta
         dados[subpasta] = {}
 
+        # Lista que armazenará os dados dos arquivos para posterior ordenação
+        arquivos_com_itens = []
+
+        # Processa cada arquivo dentro da subpasta
         for arquivo in arquivos:
             caminho_arquivo = os.path.join(caminho_pasta, arquivo)
+            
             with open(caminho_arquivo, 'r') as f:
-                linhas = f.readlines()
+                linhas = f.readlines()  # Lê todas as linhas do arquivo
+                
+                # Primeira linha contém a capacidade da mochila
                 primeira_linha = linhas[0].split()
                 capacidade = int(primeira_linha[1])
-                itens = []
-                otimo = []
+                
+                itens = []  # Lista para armazenar os itens (peso e valor)
+                otimo = []  # Lista para armazenar o vetor ótimo
 
-                # Processa todos os itens (valor, peso)
-                for linha in linhas[1:-1]:  # Lê todas as linhas exceto a última (vetor ótimo)
-                    valor, peso = map(int, linha.split())
-                    itens.append(Item(peso, valor))
+                # Processa todas as linhas exceto a última (vetor ótimo)
+                for linha in linhas[1:-1]:
+                    linha = linha.strip()
+                    if linha:  # Garante que a linha não está vazia
+                        valor, peso = map(int, linha.split())  # Extrai valor e peso
+                        itens.append(Item(peso, valor))  # Adiciona o item à lista
 
-                # Processa o vetor ótimo (última linha)
+                # Processa a última linha que contém o vetor ótimo
                 otimo = list(map(int, linhas[-1].strip().split()))
+                
+                # Armazena os dados do arquivo na lista, para ordenar posteriormente
+                arquivos_com_itens.append((arquivo, capacidade, itens, otimo))
 
-                dados[subpasta][arquivo] = {'capacidade': capacidade, 'itens': itens, 'otimo': otimo}
+        # Ordena a lista de arquivos com base na quantidade de itens (do menor para o maior)
+        arquivos_com_itens.sort(key=lambda x: len(x[2]))  # x[2] é a lista de itens
+
+        # Após a ordenação, insere os dados no dicionário final
+        for arquivo, capacidade, itens, otimo in arquivos_com_itens:
+            dados[subpasta][arquivo] = {'capacidade': capacidade, 'itens': itens, 'otimo': otimo}
+
 
     return dados
 
@@ -101,10 +122,23 @@ def gerar_graficos(diretorio):
 
         for tipo_instancia, instancia_dados in dados.items():
 
+            # Zera as listas ao final da geração do gráfico
+            time1.clear()
+            time2.clear()
+            time3.clear()
+            qualidade1.clear()
+            qualidade2.clear()
+            qualidade3.clear()
+
             for arquivo, conteudo in instancia_dados.items():
                 capacidade = conteudo['capacidade']
                 itens = conteudo['itens']
                 otimo = conteudo['otimo']
+
+                # Validação para garantir que o tamanho do vetor 'otimo' corresponde ao número de itens
+                
+                print(f"{arquivo} {len(itens)} {len(otimo)}")
+                
                 
                 valor_otimo = sum([itens[i].valor for i in range(len(itens)) if otimo[i] == 1])
 
@@ -126,6 +160,7 @@ def gerar_graficos(diretorio):
                 elapsed_time = end - start
                 time2.append(round(elapsed_time, 3) if elapsed_time > 0 else 1e-6)  # Substitui 0 por 1e-6
                 qualidade2.append(round(resultado_gulosa_beneficio / valor_otimo, 3))
+               
                 
                 # Salva a linha no arquivo de debug
                 debug_file.write(f"Arquivo: {arquivo} - Valor Ótimo: {valor_otimo}, Resultado Gulosa por Benefício/Custo: {resultado_gulosa_beneficio}\n")
@@ -137,6 +172,7 @@ def gerar_graficos(diretorio):
                 elapsed_time = end - start
                 time3.append(round(elapsed_time, 3) if elapsed_time > 0 else 1e-6)  # Substitui 0 por 1e-6
                 qualidade3.append(round(resultado_dinamica / valor_otimo, 3))
+                print(f" valor: {resultado_dinamica}  - {valor_otimo}")
                 
                 # Salva a linha no arquivo de debug
                 debug_file.write(f"Arquivo: {arquivo} - Valor Ótimo: {valor_otimo}, Resultado Programação Dinâmica: {resultado_dinamica}\n")
@@ -193,13 +229,7 @@ def gerar_graficos(diretorio):
             plt.savefig(grafico_qualidade_path)
             plt.clf()
 
-            # Zera as listas ao final da geração do gráfico
-            time1.clear()
-            time2.clear()
-            time3.clear()
-            qualidade1.clear()
-            qualidade2.clear()
-            qualidade3.clear()
+            
 
 # Exemplo de como utilizar a função:
 gerar_graficos('./teste')
