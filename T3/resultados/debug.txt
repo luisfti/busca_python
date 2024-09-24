@@ -28,48 +28,50 @@ Arquivo: knapPI_1_10000_1000_1 - Valor Ótimo: 563647, Resultado Programação D
 
 
 Tipo de Instância: knaPI_1
-Tempo de Execução - Peso: [0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.003]
-Tempo de Execução - Benefício: [0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.003]
-Tempo de Execução - Dinâmica: [0.017, 0.035, 0.312, 1.384, 5.938, 37.999, 153.637]
+Tempo de Execução - Peso: [1e-06, 1e-06, 1e-06, 1e-06, 1e-06, 0.001, 0.003]
+Tempo de Execução - Benefício: [1e-06, 1e-06, 1e-06, 1e-06, 0.001, 0.001, 0.002]
+Tempo de Execução - Dinâmica: [0.019, 0.038, 0.315, 1.375, 5.845, 37.587, 152.712]
 Qualidade - Peso: [0.95, 0.956, 0.873, 0.872, 0.884, 0.888, 0.879]
 Qualidade - Benefício: [0.964, 0.999, 0.999, 0.998, 0.999, 1.0, 1.0]
 Qualidade - Dinâmica: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
 Arquivo: knapPI_2_100_1000_1 - Valor Ótimo: 1514, Resultado Gulosa por Peso: 862
 Arquivo: knapPI_2_100_1000_1 - Valor Ótimo: 1514, Resultado Gulosa por Benefício/Custo: 1487
 Arquivo: knapPI_2_100_1000_1 - Valor Ótimo: 1514, Resultado Programação Dinâmica: 1514
 
-Arquivo: knapPI_2_200_1000_1 - Valor Ótimo: 2789, Resultado Gulosa por Peso: 1042
-Arquivo: knapPI_2_200_1000_1 - Valor Ótimo: 2789, Resultado Gulosa por Benefício/Custo: 1603
-Arquivo: knapPI_2_200_1000_1 - Valor Ótimo: 2789, Resultado Programação Dinâmica: 1634
+Arquivo: knapPI_2_200_1000_1 - Valor Ótimo: 1634, Resultado Gulosa por Peso: 1043
+Arquivo: knapPI_2_200_1000_1 - Valor Ótimo: 1634, Resultado Gulosa por Benefício/Custo: 1604
+Arquivo: knapPI_2_200_1000_1 - Valor Ótimo: 1634, Resultado Programação Dinâmica: 1634
 
-Arquivo: knapPI_2_500_1000_1 - Valor Ótimo: 10918, Resultado Gulosa por Peso: 3103
-Arquivo: knapPI_2_500_1000_1 - Valor Ótimo: 10918, Resultado Gulosa por Benefício/Custo: 4552
-Arquivo: knapPI_2_500_1000_1 - Valor Ótimo: 10918, Resultado Programação Dinâmica: 4566
+Arquivo: knapPI_2_500_1000_1 - Valor Ótimo: 4566, Resultado Gulosa por Peso: 3105
+Arquivo: knapPI_2_500_1000_1 - Valor Ótimo: 4566, Resultado Gulosa por Benefício/Custo: 4552
+Arquivo: knapPI_2_500_1000_1 - Valor Ótimo: 4566, Resultado Programação Dinâmica: 4566
 
-Arquivo: knapPI_2_1000_1000_1 - Valor Ótimo: 25058, Resultado Gulosa por Peso: 6149
-Arquivo: knapPI_2_1000_1000_1 - Valor Ótimo: 25058, Resultado Gulosa por Benefício/Custo: 9046
-Arquivo: knapPI_2_1000_1000_1 - Valor Ótimo: 25058, Resultado Programação Dinâmica: 9052
+Arquivo: knapPI_2_1000_1000_1 - Valor Ótimo: 9052, Resultado Gulosa por Peso: 6152
+Arquivo: knapPI_2_1000_1000_1 - Valor Ótimo: 9052, Resultado Gulosa por Benefício/Custo: 9046
+Arquivo: knapPI_2_1000_1000_1 - Valor Ótimo: 9052, Resultado Programação Dinâmica: 9052
 
-Arquivo: knapPI_2_2000_1000_1 - Valor Ótimo: 51232, Resultado Gulosa por Peso: 11969
-Arquivo: knapPI_2_2000_1000_1 - Valor Ótimo: 51232, Resultado Gulosa por Benefício/Custo: 18038
-Arquivo: knapPI_2_2000_1000_1 - Valor Ótimo: 51232, Resultado Programação Dinâmica: 18051
+Arquivo: knapPI_2_2000_1000_1 - Valor Ótimo: 18051, Resultado Gulosa por Peso: 11972
+Arquivo: knapPI_2_2000_1000_1 - Valor Ótimo: 18051, Resultado Gulosa por Benefício/Custo: 18038
+Arquivo: knapPI_2_2000_1000_1 - Valor Ótimo: 18051, Resultado Programação Dinâmica: 18051
 
-Arquivo: knapPI_2_5000_1000_1 - Valor Ótimo: 146744, Resultado Gulosa por Peso: 28006
-Arquivo: knapPI_2_5000_1000_1 - Valor Ótimo: 146744, Resultado Gulosa por Benefício/Custo: 44349
-Arquivo: knapPI_2_5000_1000_1 - Valor Ótimo: 146744, Resultado Programação Dinâmica: 44356
+Arquivo: knapPI_2_5000_1000_1 - Valor Ótimo: 44356, Resultado Gulosa por Peso: 27980
+Arquivo: knapPI_2_5000_1000_1 - Valor Ótimo: 44356, Resultado Gulosa por Benefício/Custo: 44351
+Arquivo: knapPI_2_5000_1000_1 - Valor Ótimo: 44356, Resultado Programação Dinâmica: 44356
 
-Arquivo: knapPI_2_10000_1000_1 - Valor Ótimo: 304889, Resultado Gulosa por Peso: 59093
-Arquivo: knapPI_2_10000_1000_1 - Valor Ótimo: 304889, Resultado Gulosa por Benefício/Custo: 90197
-Arquivo: knapPI_2_10000_1000_1 - Valor Ótimo: 304889, Resultado Programação Dinâmica: 90204
+Arquivo: knapPI_2_10000_1000_1 - Valor Ótimo: 90204, Resultado Gulosa por Peso: 59020
+Arquivo: knapPI_2_10000_1000_1 - Valor Ótimo: 90204, Resultado Gulosa por Benefício/Custo: 90200
+Arquivo: knapPI_2_10000_1000_1 - Valor Ótimo: 90204, Resultado Programação Dinâmica: 90204
 
 
 Tipo de Instância: knaPI_2
-Tempo de Execução - Peso: [0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.002]
-Tempo de Execução - Benefício: [0.0, 0.0, 0.0, 0.0, 0.001, 0.001, 0.003]
-Tempo de Execução - Dinâmica: [0.019, 0.035, 0.314, 1.388, 5.775, 37.691, 154.158]
-Qualidade - Peso: [0.569, 0.374, 0.284, 0.245, 0.234, 0.191, 0.194]
-Qualidade - Benefício: [0.982, 0.575, 0.417, 0.361, 0.352, 0.302, 0.296]
-Qualidade - Dinâmica: [1.0, 0.586, 0.418, 0.361, 0.352, 0.302, 0.296]
+Tempo de Execução - Peso: [1e-06, 0.001, 1e-06, 1e-06, 1e-06, 0.001, 0.002]
+Tempo de Execução - Benefício: [1e-06, 1e-06, 1e-06, 1e-06, 0.001, 0.001, 0.002]
+Tempo de Execução - Dinâmica: [0.017, 0.035, 0.32, 1.363, 5.813, 37.639, 152.433]
+Qualidade - Peso: [0.569, 0.638, 0.68, 0.68, 0.663, 0.631, 0.654]
+Qualidade - Benefício: [0.982, 0.982, 0.997, 0.999, 0.999, 1.0, 1.0]
+Qualidade - Dinâmica: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
 Arquivo: knapPI_3_100_1000_1 - Valor Ótimo: 2397, Resultado Gulosa por Peso: 2375
 Arquivo: knapPI_3_100_1000_1 - Valor Ótimo: 2397, Resultado Gulosa por Benefício/Custo: 2375
 Arquivo: knapPI_3_100_1000_1 - Valor Ótimo: 2397, Resultado Programação Dinâmica: 2397
@@ -78,31 +80,32 @@ Arquivo: knapPI_3_200_1000_1 - Valor Ótimo: 2697, Resultado Gulosa por Peso: 26
 Arquivo: knapPI_3_200_1000_1 - Valor Ótimo: 2697, Resultado Gulosa por Benefício/Custo: 2649
 Arquivo: knapPI_3_200_1000_1 - Valor Ótimo: 2697, Resultado Programação Dinâmica: 2697
 
-Arquivo: knapPI_3_500_1000_1 - Valor Ótimo: 16797, Resultado Gulosa por Peso: 6878
-Arquivo: knapPI_3_500_1000_1 - Valor Ótimo: 16797, Resultado Gulosa por Benefício/Custo: 6878
-Arquivo: knapPI_3_500_1000_1 - Valor Ótimo: 16797, Resultado Programação Dinâmica: 6917
+Arquivo: knapPI_3_500_1000_1 - Valor Ótimo: 7117, Resultado Gulosa por Peso: 7098
+Arquivo: knapPI_3_500_1000_1 - Valor Ótimo: 7117, Resultado Gulosa por Benefício/Custo: 7098
+Arquivo: knapPI_3_500_1000_1 - Valor Ótimo: 7117, Resultado Programação Dinâmica: 7117
 
-Arquivo: knapPI_3_1000_1000_1 - Valor Ótimo: 46685, Resultado Gulosa por Peso: 14154
-Arquivo: knapPI_3_1000_1000_1 - Valor Ótimo: 46685, Resultado Gulosa por Benefício/Custo: 14154
-Arquivo: knapPI_3_1000_1000_1 - Valor Ótimo: 46685, Resultado Programação Dinâmica: 14190
+Arquivo: knapPI_3_1000_1000_1 - Valor Ótimo: 14390, Resultado Gulosa por Peso: 14374
+Arquivo: knapPI_3_1000_1000_1 - Valor Ótimo: 14390, Resultado Gulosa por Benefício/Custo: 14374
+Arquivo: knapPI_3_1000_1000_1 - Valor Ótimo: 14390, Resultado Programação Dinâmica: 14390
 
-Arquivo: knapPI_3_2000_1000_1 - Valor Ótimo: 104708, Resultado Gulosa por Peso: 28272
-Arquivo: knapPI_3_2000_1000_1 - Valor Ótimo: 104708, Resultado Gulosa por Benefício/Custo: 28272
-Arquivo: knapPI_3_2000_1000_1 - Valor Ótimo: 104708, Resultado Programação Dinâmica: 28319
+Arquivo: knapPI_3_2000_1000_1 - Valor Ótimo: 28919, Resultado Gulosa por Peso: 28827
+Arquivo: knapPI_3_2000_1000_1 - Valor Ótimo: 28919, Resultado Gulosa por Benefício/Custo: 28827
+Arquivo: knapPI_3_2000_1000_1 - Valor Ótimo: 28919, Resultado Programação Dinâmica: 28919
 
-Arquivo: knapPI_3_5000_1000_1 - Valor Ótimo: 264138, Resultado Gulosa por Peso: 71059
-Arquivo: knapPI_3_5000_1000_1 - Valor Ótimo: 264138, Resultado Gulosa por Benefício/Custo: 71059
-Arquivo: knapPI_3_5000_1000_1 - Valor Ótimo: 264138, Resultado Programação Dinâmica: 71105
+Arquivo: knapPI_3_5000_1000_1 - Valor Ótimo: 72505, Resultado Gulosa por Peso: 72446
+Arquivo: knapPI_3_5000_1000_1 - Valor Ótimo: 72505, Resultado Gulosa por Benefício/Custo: 72446
+Arquivo: knapPI_3_5000_1000_1 - Valor Ótimo: 72505, Resultado Programação Dinâmica: 72505
 
-Arquivo: knapPI_3_10000_1000_1 - Valor Ótimo: 561848, Resultado Gulosa por Peso: 143589
-Arquivo: knapPI_3_10000_1000_1 - Valor Ótimo: 561848, Resultado Gulosa por Benefício/Custo: 143589
-Arquivo: knapPI_3_10000_1000_1 - Valor Ótimo: 561848, Resultado Programação Dinâmica: 143619
+Arquivo: knapPI_3_10000_1000_1 - Valor Ótimo: 146919, Resultado Gulosa por Peso: 146888
+Arquivo: knapPI_3_10000_1000_1 - Valor Ótimo: 146919, Resultado Gulosa por Benefício/Custo: 146888
+Arquivo: knapPI_3_10000_1000_1 - Valor Ótimo: 146919, Resultado Programação Dinâmica: 146919
 
 
 Tipo de Instância: knaPI_3
-Tempo de Execução - Peso: [0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.002]
-Tempo de Execução - Benefício: [0.0, 0.0, 0.0, 0.0, 0.001, 0.001, 0.002]
-Tempo de Execução - Dinâmica: [0.018, 0.035, 0.315, 1.385, 5.668, 37.263, 150.398]
-Qualidade - Peso: [0.991, 0.982, 0.409, 0.303, 0.27, 0.269, 0.256]
-Qualidade - Benefício: [0.991, 0.982, 0.409, 0.303, 0.27, 0.269, 0.256]
-Qualidade - Dinâmica: [1.0, 1.0, 0.412, 0.304, 0.27, 0.269, 0.256]
+Tempo de Execução - Peso: [1e-06, 1e-06, 1e-06, 1e-06, 1e-06, 0.001, 0.002]
+Tempo de Execução - Benefício: [1e-06, 1e-06, 1e-06, 1e-06, 0.001, 0.001, 0.003]
+Tempo de Execução - Dinâmica: [0.018, 0.035, 0.313, 1.399, 5.73, 37.376, 151.126]
+Qualidade - Peso: [0.991, 0.982, 0.997, 0.999, 0.997, 0.999, 1.0]
+Qualidade - Benefício: [0.991, 0.982, 0.997, 0.999, 0.997, 0.999, 1.0]
+Qualidade - Dinâmica: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+

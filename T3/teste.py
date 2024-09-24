@@ -11,7 +11,7 @@ class Item:
 
 # Função para ler os dados dos três diretórios de arquivos
 def ler_dados(diretorio):
-    subpastas = ['knaPI_1', 'knaPI_2', 'knaPI_3']
+    subpastas = ['knaPI_2']
     dados = {}
 
     for subpasta in subpastas:
@@ -19,41 +19,24 @@ def ler_dados(diretorio):
         arquivos = os.listdir(caminho_pasta)
         dados[subpasta] = {}
 
-        # Lista para armazenar informações sobre os arquivos e número de itens
-        arquivos_com_itens = []
-
         for arquivo in arquivos:
             caminho_arquivo = os.path.join(caminho_pasta, arquivo)
             with open(caminho_arquivo, 'r') as f:
-                primeira_linha = f.readline().split()
+                linhas = f.readlines()
+                primeira_linha = linhas[0].split()
                 capacidade = int(primeira_linha[1])
                 itens = []
-                otimo = []  # Inicializar o vetor ótimo como vazio
-                for linha in f:
-                    linha = linha.strip()  # Remove espaços em branco no início e no final
-                    if not linha:  # Ignora linhas vazias
-                        continue
-                    if all(c in "01" for c in linha.replace(" ", "")):  # Verifica se a linha contém apenas '0' e '1'
-                        otimo = list(map(int, linha.split()))  # Converte a linha em lista de inteiros
-                    else:
-                        try:
-                            valor, peso = map(int, linha.split())
-                            itens.append(Item(peso, valor))
-                        except ValueError:
-                            print(f"Erro ao processar linha: {linha}")
-                            continue
-                
-                # Armazena o arquivo e o número de itens para ordenação
-                arquivos_com_itens.append((arquivo, capacidade, itens, otimo))
+                otimo = []
 
-        # Ordenar a lista de arquivos com base no número de itens (do menor para o maior)
-        arquivos_com_itens.sort(key=lambda x: len(x[2]))  # x[2] é a lista de itens
+                # Processa todos os itens (valor, peso)
+                for linha in linhas[1:-1]:  # Lê todas as linhas exceto a última (vetor ótimo)
+                    valor, peso = map(int, linha.split())
+                    itens.append(Item(peso, valor))
 
-        # Inserir os dados ordenados no dicionário
-        for arquivo, capacidade, itens, otimo in arquivos_com_itens:
-            dados[subpasta][arquivo] = {'capacidade': capacidade, 'itens': itens, 'otimo': otimo}
+                # Processa o vetor ótimo (última linha)
+                otimo = list(map(int, linhas[-1].strip().split()))
 
-        #print(f"Dados do arquivo '{arquivo}': Capacidade: {capacidade}, Quantidade de Itens: {len(itens)}, Tamanho do Vetor Ótimo: {len(otimo)}")
+                dados[subpasta][arquivo] = {'capacidade': capacidade, 'itens': itens, 'otimo': otimo}
 
     return dados
 
